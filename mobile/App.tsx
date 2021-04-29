@@ -8,6 +8,7 @@ import {
   RobotoSlab_500Medium,
 } from '@expo-google-fonts/roboto-slab';
 import { useFonts } from 'expo-font';
+import GlobalProvider from './src/hooks';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -23,7 +24,9 @@ const App: React.FC = () => {
     <>
       <NavigationContainer>
         <StatusBar barStyle='light-content' translucent />
-        <Routes />
+        <GlobalProvider>
+          <Routes />
+        </GlobalProvider>
       </NavigationContainer>
     </>
   );

@@ -4,6 +4,7 @@ import IUsersRepository from '../repositories/IUsersRepository';
 import { injectable, inject } from 'tsyringe';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
 import IUserTokensRepository from '../repositories/IUserTokenRepository';
+import path from 'path';
 
 interface IRequest {
   email: string;
@@ -33,9 +34,26 @@ export default class SendForgotPasswordEmailService {
       checkUserExists.id
     );
 
-    await this.mailProvider.sendMail(
-      email,
-      `Pedido de recuperação de senha recebido: ${token}`
+    const forgotPasswordTemplate = path.resolve(
+      __dirname,
+      '..',
+      'views',
+      'forgot_password.hbs'
     );
+
+    await this.mailProvider.sendMail({
+      to: {
+        name: checkUserExists.name,
+        email: checkUserExists.email,
+      },
+      subject: '[GoBarber] Recuperação de Senha',
+      templateData: {
+        file: forgotPasswordTemplate,
+        variables: {
+          name: checkUserExists.name,
+          link: `http://localhost:3000/reset_password?token=${token}`,
+        },
+      },
+    });
   }
 }

@@ -1,6 +1,6 @@
-import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
+import ICreateNotificationDTO from '@modules/notifications/dtos/ICreateNotificationDTO';
 import Notification from '../infra/typeorm/schemas/Notification';
 
 export default interface INotificationsRepository {
-  create(date: ICreateAppointmentDTO): Promise<Notification>;
+  create(date: ICreateNotificationDTO): Promise<Notification>;
 }

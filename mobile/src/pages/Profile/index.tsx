@@ -130,6 +130,7 @@ const Profile: React.FC = () => {
       allowsEditing: true,
       aspect: [4, 4],
       quality: 1,
+      allowsMultipleSelection: false,
     });
 
     if (!response.cancelled) {

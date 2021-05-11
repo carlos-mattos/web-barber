@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import {
   View,
   ScrollView,
@@ -24,6 +24,7 @@ import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
 import api from '../../services/api';
 import { useAuth } from '../../hooks/AuthContext';
+import * as ImagePicker from 'expo-image-picker';
 
 interface SignUpFormData {
   name: string;
@@ -104,12 +105,52 @@ const Profile: React.FC = () => {
         );
       }
     },
-    [navigation]
+    [navigation, updateUser]
   );
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const { status } =
+          await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          alert('Sorry, we need camera roll permissions to make this work!');
+        }
+      }
+    })();
+  }, []);
 
   const handleBackButton = useCallback(() => {
     navigation.goBack();
   }, []);
+
+  const handleUpdateAvatar = useCallback(async () => {
+    const response = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 4],
+      quality: 1,
+    });
+
+    if (!response.cancelled) {
+      const data = new FormData();
+
+      data.append(
+        'avatar',
+        JSON.parse(
+          JSON.stringify({
+            uri: response.uri,
+            name: `${user.id}.jpg`,
+            type: 'image/jpeg',
+          })
+        )
+      );
+
+      api.patch('users/avatar', data).then((apiResponse) => {
+        updateUser(apiResponse.data);
+      });
+    }
+  }, [updateUser, user.id]);
 
   return (
     <>
@@ -127,7 +168,7 @@ const Profile: React.FC = () => {
               <Feather name='chevron-left' size={24} color='#999591' />
             </BackButton>
 
-            <UserAvatarButton onPress={() => {}}>
+            <UserAvatarButton onPress={handleUpdateAvatar}>
               <UserAvatar source={{ uri: user.avatar_url }} />
             </UserAvatarButton>
 

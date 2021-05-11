@@ -246,7 +246,9 @@ const CreateAppointment: React.FC = () => {
         </Schedule>
 
         <CreateAppointmentButton onPress={handleCreateAppointment}>
-          <CreateAppointmentButtonText></CreateAppointmentButtonText>
+          <CreateAppointmentButtonText>
+            Confirmar agendamento
+          </CreateAppointmentButtonText>
         </CreateAppointmentButton>
       </Content>
     </Container>

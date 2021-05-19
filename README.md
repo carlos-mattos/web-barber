@@ -85,6 +85,10 @@ $ npm start
 
 # Escaneie o QR Code exibido na janela do navegador.
 ```
-<br>
+</br>
+
+## 📝 Licença
+
+Este projeto esta sobe a licença MIT. Veja a [LICENÇA](https://opensource.org/licenses/MIT) para saber mais.
 
 Desenvolvido por [Carlos Eduardo](https://www.linkedin.com/in/carlos-eduardo-andrade-de-mattos-a060b1182/) 🤓

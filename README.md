@@ -5,13 +5,11 @@
 ## 🔖 Sobre
 GoBarber é uma plataforma web e mobile, que tem a função de conectar profissionais e clientes e, assim, facilitar os agendamentos de horário.
 
+<br />
 
 ## 📷 Preview
-<p> 
-  <br>
+<p align="center"> 
   <img src="./github-readme/web.gif?raw=true" alt="Página inicial" width="70%">
-  &nbsp;
-  <img src="./github-readme/mobile.gif?raw=true" alt="mobile" width="25%">
 </p>
 
 ## 🛠 Tecnologias

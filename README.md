@@ -57,36 +57,30 @@ $ docker start [CONTAINER ID]
 
 ### API
 ```bash
-# Entrar na raiz do projeto **/backend** e rodar o comando:
+# Entrar no diretorio **/backend** e instalar as dependencias:
 $ npm install
 
-# Ainda na raiz do projeto, rodar o comando:
+# Ainda no mesmo local, rodar o comando:
 $ npm run dev:server
 ```
 
 
 ### Web
 ```bash
-# Entre na pasta web com 
-$ cd happy/web
-
-# Instale as dependências
+# Entrar no diretorio **/web** e instalar as dependencias:
 $ npm install
 
-# Rode o aplicação
+# Ainda no mesmo local, rodar o comando:
 $ npm start
 ```
 
 ### Mobile
 
 ```bash
-# Entre na pasta mobile com 
-$ cd happy/mobile
-
-# Instale as dependências
+# Entrar no diretorio **/mobile** e instalar as dependencias:
 $ npm install
 
-# Rode o app
+# Ainda no mesmo local, rodar o comando:
 $ npm start
 
 # Escaneie o QR Code exibido na janela do navegador.

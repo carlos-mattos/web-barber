@@ -9,8 +9,12 @@ GoBarber é uma plataforma web e mobile, que tem a função de conectar profissi
 
 ## 📷 Preview
 <p align="center"> 
-  <img src="./github-readme/webgif.gif?raw=true" alt="demo" width="70%">
+  <img src="./github-readme/webgif.gif?raw=true" alt="demo" />
 </p>
+
+<img src="./github-readme/mobile1.png" alt="mobile1" />
+
+<br />
 
 ## 🛠 Tecnologias
 

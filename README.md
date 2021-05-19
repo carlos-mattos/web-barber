@@ -1,10 +1,12 @@
 <p align="center" >
-  <img src="./github-readme/logo.svg" width="15%" alt="Happy">
+  <img src="./github-readme/logo.svg" width="15%" alt="logo">
 </p>
 
 ## 🔖 Sobre
 GoBarber é uma plataforma web e mobile, que tem a função de conectar profissionais e clientes e, assim, facilitar os agendamentos de horário.
 
+
+## 📷 Preview
 <p> 
   <br>
   <img src="./github-readme/web.gif?raw=true" alt="Página inicial" width="70%">
